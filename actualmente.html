@@ -13,7 +13,7 @@
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="experiencia.html">Experiencia</a></li>
-                <li><a href="proyectos.html">Como Independiente</a></li>
+                <li><a href="proyectos.html">T.I</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
                 <li><a href="actualmente.html" class="active">Actualmente</a></li>
             </ul>
@@ -40,7 +40,7 @@
                         <p>A continuación, se muestra el pensum del estudiante y del graduado, destacando las materias cursadas y las que aún faltan por cursar:</p>
                     </div>
                     <div class="images">
-                        <img src="img/PEMSUM.png" alt="Pensum de materias" class="animated-image" id="pensum-img">
+                        <img src="img/PEMSUM.png" alt="Pensum de materias" class="animated-image" id="pensum-img" onclick="openModal(this)">
                     </div>
                 </div>
             </div>
@@ -56,33 +56,26 @@
 
     <footer>
         <div class="footer-icons">
-            <a href="https://www.linkedin.com/in/andresfelipemeneses" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/andresfelipemeneses" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://twitter.com/andresfelipemeneses" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/andres-felipe-meneses-bustamante-9892591a8/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/Pispost26" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com/un.perfil_mas/" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
-        <p>&copy; 2024 Andres Felipe Meneses. Todos los derechos reservados.</p>
+        <p>&copy; 2023 Andres Felipe Meneses. Todos los derechos reservados.</p>
     </footer>
 
     <script>
-        // Obtener el modal
+        // Modal Image Gallery
         var modal = document.getElementById("myModal");
-
-        // Obtener la imagen y el elemento modal
-        var img = document.getElementById("pensum-img");
         var modalImg = document.getElementById("img01");
         var captionText = document.getElementById("caption");
 
-        // Cuando el usuario hace clic en la imagen, abrir el modal
-        img.onclick = function(){
+        function openModal(element) {
             modal.style.display = "block";
-            modalImg.src = this.src;
-            captionText.innerHTML = this.alt;
+            modalImg.src = element.src;
+            captionText.innerHTML = element.alt;
         }
 
-        // Obtener el elemento de cierre
         var span = document.getElementsByClassName("close")[0];
-
-        // Cuando el usuario hace clic en (x), cerrar el modal
         span.onclick = function() { 
             modal.style.display = "none";
         }

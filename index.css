@@ -17,6 +17,7 @@ header {
     z-index: 10;
     background-color: rgba(0, 0, 0, 0.5); /* Fondo transparente con opacidad */
     backdrop-filter: blur(5px);
+    width: 100%;
 }
 
 header nav ul {
@@ -25,6 +26,7 @@ header nav ul {
     margin: 0;
     display: flex;
     gap: 10px;
+    justify-content: flex-end;
 }
 
 header nav ul li {
@@ -86,7 +88,7 @@ header nav ul li a:hover {
     align-items: center;
     flex-direction: column;
     z-index: 2;
-    text-align: right;
+    text-align: center;
     padding-right: 5px;
 }
 
@@ -170,4 +172,28 @@ footer {
 
 .footer-icons a:hover {
     color: #840cf5;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .cover-text {
+        font-size: 2em;
+    }
+
+    .hover-text {
+        font-size: 1.5em;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    header nav ul li a {
+        padding: 10px;
+    }
+
+    .background-overlay img {
+        object-fit: contain;
+    }
 }
