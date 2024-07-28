@@ -1,0 +1,231 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 20px;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo transparente con opacidad */
+    backdrop-filter: blur(5px);
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 10px;
+}
+
+header nav ul li {
+    display: inline;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    background-color: transparent; /* Fondo transparente */
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+    font-weight: 300;
+}
+
+header nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente en hover */
+    color: #fff;
+    transform: scale(1.1);
+}
+
+#cover-actualmente {
+    position: relative;
+    text-align: center;
+    margin: 0;
+    overflow: hidden;
+    min-height: 100vh;
+    background: url('img/5.jpg') no-repeat center center/cover;
+    background-attachment: fixed;
+}
+
+.cover-text-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    z-index: 2;
+}
+
+#cover-actualmente::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.animated-text {
+    animation: fadeInUp 2s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cover-text {
+    color: #fff;
+    font-size: 3em;
+    text-align: center;
+    font-weight: 300;
+    white-space: nowrap;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.cover-text-container:hover .cover-text {
+    transform: translateY(-20px);
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.content-section {
+    padding: 20px;
+    text-align: center;
+    margin-top: -50px;
+}
+
+.content-section .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    background-color: rgba(18, 18, 18, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
+}
+
+.content-section .text {
+    max-width: 800px;
+}
+
+.content-section .images {
+    display: flex;
+    gap: 20px;
+}
+
+.content-section .images img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    animation: slideIn 2s ease-in-out;
+    cursor: pointer; /* Añadido para mostrar que la imagen es interactiva */
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+footer {
+    margin-top: auto;
+    padding: 10px 0;
+    background-color: #1e1e1e;
+    color: #fff;
+    text-align: center;
+}
+
+.footer-icons {
+    margin-top: 10px;
+}
+
+.footer-icons a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.footer-icons a:hover {
+    color: #00aced;
+}
+
+/* Modal CSS */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}

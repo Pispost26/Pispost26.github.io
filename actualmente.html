@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualmente</title>
+    <link rel="stylesheet" href="actualmente.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="experiencia.html">Experiencia</a></li>
+                <li><a href="proyectos.html">Como Independiente</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="actualmente.html" class="active">Actualmente</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="cover-actualmente">
+        <div class="cover-text-container">
+            <div class="cover-text animated-text">Actualmente</div>
+            <div class="cover-text animated-text">______________________</div>
+            <div class="content-section">
+                <div class="container">
+                    <div class="text">
+                        <h2>Estudiante Ingeniería de Sistemas y Desarrollo de Software</h2>
+                        <p>Actualmente curso en la etapa final de mi carrera en Ingeniería en Desarrollo de Software, en camino hacia mi graduación. Mi pasión por la innovación y el aprendizaje tecnológico me impulsa a explorar y contribuir al futuro del desarrollo de software, buscando crear soluciones que transformen el mundo digital.</p>
+                    </div>
+                    <div class="images">
+                        <img src="img/6.jpg" alt="Imagen 6" class="animated-image">
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="text">
+                        <h2>PENSUM</h2>
+                        <p>A continuación, se muestra el pensum del estudiante y del graduado, destacando las materias cursadas y las que aún faltan por cursar:</p>
+                    </div>
+                    <div class="images">
+                        <img src="img/PEMSUM.png" alt="Pensum de materias" class="animated-image" id="pensum-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
+
+    <footer>
+        <div class="footer-icons">
+            <a href="https://www.linkedin.com/in/andresfelipemeneses" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/andresfelipemeneses" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://twitter.com/andresfelipemeneses" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2024 Andres Felipe Meneses. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Obtener el modal
+        var modal = document.getElementById("myModal");
+
+        // Obtener la imagen y el elemento modal
+        var img = document.getElementById("pensum-img");
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+
+        // Cuando el usuario hace clic en la imagen, abrir el modal
+        img.onclick = function(){
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+        }
+
+        // Obtener el elemento de cierre
+        var span = document.getElementsByClassName("close")[0];
+
+        // Cuando el usuario hace clic en (x), cerrar el modal
+        span.onclick = function() { 
+            modal.style.display = "none";
+        }
+    </script>
+</body>
+</html>

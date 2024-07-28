@@ -1,0 +1,150 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f8ff; /* Fondo blanco con un toque de azul */
+    color: #003366; /* Texto azul oscuro */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #003366; /* Azul oscuro */
+    padding: 10px 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #f0f8ff; /* Blanco */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a.active {
+    border-bottom: 2px solid #f0f8ff; /* Blanco */
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(rgba(0, 0, 51, 0.7), rgba(0, 0, 51, 0.7)), url('img/10.jpg') no-repeat center center/cover; /* Imagen de fondo con degradado azul oscuro */
+    color: #f0f8ff; /* Blanco */
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2em;
+}
+
+.services {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 20px;
+    flex-wrap: wrap;
+}
+
+.service {
+    background: #e6f2ff; /* Azul claro */
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    width: 30%;
+    min-width: 250px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 51, 102, 0.5); /* Sombra azul oscuro */
+    color: #003366; /* Texto azul oscuro */
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.service::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7); /* Superposición blanca con opacidad */
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 1;
+}
+
+.service:hover::after {
+    opacity: 1;
+}
+
+.service h2 {
+    margin-top: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.service p {
+    font-size: 1em;
+    line-height: 1.5;
+    display: none;
+    transition: opacity 0.5s ease-in-out;
+    position: relative;
+    z-index: 2;
+}
+
+.service:hover p {
+    display: block;
+    opacity: 1;
+}
+
+.service:hover {
+    background-size: cover;
+    transition: background 0.5s ease-in-out, transform 0.3s ease-in-out;
+    transform: scale(1.05);
+}
+
+.service:nth-child(1):hover {
+    background: url('img/12.jpg') no-repeat center center/cover; /* Cambia esto a la imagen deseada */
+}
+
+.service:nth-child(2):hover {
+    background: url('img/11.jpg') no-repeat center center/cover; /* Cambia esto a la imagen deseada */
+}
+
+.service:nth-child(3):hover {
+    background: url('img/13.png') no-repeat center center/cover; /* Cambia esto a la imagen deseada */
+}
+
+footer {
+    margin-top: auto;
+    padding: 10px 0;
+    background-color: #003366; /* Azul oscuro */
+    color: #f0f8ff; /* Blanco */
+    text-align: center;
+}
+
+.footer-icons {
+    margin-top: 10px;
+}
+
+.footer-icons a {
+    color: #f0f8ff; /* Blanco */
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.5em;
+}
+
+.footer-icons a:hover {
+    color: #0099ff; /* Azul medio */
+}
