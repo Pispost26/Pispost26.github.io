@@ -15,7 +15,7 @@ header {
     right: 0;
     padding: 20px;
     z-index: 10;
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo transparente con opacidad */
+    background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(5px);
     width: 100%;
 }
@@ -37,14 +37,14 @@ header nav ul li a {
     color: #fff;
     text-decoration: none;
     padding: 10px 15px;
-    background-color: transparent; /* Fondo transparente */
+    background-color: transparent;
     border-radius: 4px;
     transition: background-color 0.3s, color 0.3s, transform 0.3s;
     font-weight: 300;
 }
 
 header nav ul li a:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente en hover */
+    background-color: rgba(255, 255, 255, 0.1);
     color: #fff;
     transform: scale(1.1);
 }
@@ -54,7 +54,7 @@ header nav ul li a:hover {
     text-align: center;
     margin: 0;
     overflow: hidden;
-    min-height: 110vh;
+    min-height: 100vh;
     background: url('img/1.jpg') no-repeat center center fixed;
     background-size: cover;
 }
@@ -166,16 +166,25 @@ footer {
 .footer-icons a {
     color: #fff;
     text-decoration: none;
-    margin: 0 15px;
-    font-size: 1.5em;
+    margin: 0 10px;
+    transition: color 0.3s;
 }
 
 .footer-icons a:hover {
-    color: #840cf5;
+    color: #00aced;
 }
 
-/* Media Queries for Responsiveness */
+/* Estilos Responsive */
 @media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav ul li {
+        margin-bottom: 10px;
+    }
+
     .cover-text {
         font-size: 2em;
     }
@@ -184,16 +193,11 @@ footer {
         font-size: 1.5em;
     }
 
-    header nav ul {
-        flex-direction: column;
-        gap: 5px;
-    }
-
-    header nav ul li a {
-        padding: 10px;
-    }
-
     .background-overlay img {
         object-fit: contain;
+    }
+
+    .cover-text-container {
+        padding-right: 0;
     }
 }

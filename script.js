@@ -37,6 +37,27 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const skillBars = document.querySelectorAll(".skill-bar");
+
+    skillBars.forEach(skillBar => {
+        const progressBar = skillBar.querySelector(".progress-bar");
+        const value = skillBar.getAttribute("data-value");
+
+        progressBar.style.width = value;
+
+        skillBar.addEventListener("mouseover", () => {
+            progressBar.style.transition = "width 0.3s ease-in-out";
+            progressBar.style.backgroundColor = "#1db954";
+        });
+
+        skillBar.addEventListener("mouseout", () => {
+            progressBar.style.backgroundColor = "#1db954";
+        });
+    });
+});
+
+
 function openModal(img) {
     var modal = document.getElementById("myModal");
     var modalImg = document.getElementById("img01");
