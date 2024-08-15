@@ -15,9 +15,9 @@ header {
     right: 0;
     padding: 20px;
     z-index: 10;
-    background-color: rgba(18, 18, 18, 0.8);
+    background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(5px);
-    width: 100%; /* Añadir */
+    width: 100%;
 }
 
 header nav ul {
@@ -26,7 +26,7 @@ header nav ul {
     margin: 0;
     display: flex;
     gap: 10px;
-    justify-content: flex-end; /* Añadir */
+    justify-content: flex-end;
 }
 
 header nav ul li {
@@ -49,143 +49,127 @@ header nav ul li a:hover {
     transform: scale(1.1);
 }
 
-#cover-experiencia {
-    height: 60vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: url('img/7.jpg') no-repeat center center/cover;
-    background-attachment: fixed;
-    margin: 0;
-    overflow: hidden;
-}
-
-.cover-text-container {
+#experience {
+    padding: 100px 20px;
     text-align: center;
-    padding: 20px;
-    border-radius: 10px;
 }
 
-.cover-text {
-    font-size: 3em;
-    animation: fadeIn 2s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.content-section {
-    padding: 40px 20px;
-    background: rgba(0, 0, 0, 0.5);
-    margin: -20px auto 0;
-    max-width: 1000px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    backdrop-filter: blur(5px);
+#experience h1 {
+    font-size: 2.5em;
+    margin-bottom: 50px;
 }
 
 .container {
     display: flex;
-    flex-direction: column-reverse;
-    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .container .text {
-    flex: 1;
-}
-
-.container .image {
-    flex: 1;
-}
-
-.container .image img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
+    width: 40%;
+    font-size: 1.2em;
 }
 
 .skill-bars {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    width: 50%;
 }
 
 .skill-bar {
-    flex: 1;
-    min-width: 150px;
-    background-color: #333;
+    margin-bottom: 20px;
+}
+
+.skill-bar .info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.skill-bar .progress-line {
+    height: 15px;
+    background-color: #2f2f2f;
     border-radius: 10px;
-    padding: 10px;
     position: relative;
     overflow: hidden;
+    animation: animateBar 2s ease-in-out;
 }
 
-.skill-bar p {
-    margin: 0;
-    font-weight: 300;
-}
-
-.skill-bar .progress {
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-    overflow: hidden;
-    height: 20px;
-    margin-top: 10px;
-    position: relative;
-}
-
-.skill-bar .progress .progress-bar {
-    background-color: #1db954;
+.skill-bar .progress-line span {
+    display: block;
     height: 100%;
-    width: var(--progress-width);
+    border-radius: 10px;
+    background-color: #00aced;
     position: absolute;
-    top: 0;
     left: 0;
-    transition: width 1s ease-in-out;
+    top: 0;
+    width: 0;
+    animation: animateProgress 2s ease-in-out forwards;
 }
 
-footer {
-    background-color: rgba(18, 18, 18, 0.8);
-    text-align: center;
-    padding: 20px;
-    margin-top: auto;
+.skill-bar .progress-line.html span {
+    width: 90%;
 }
 
-.footer-icons {
-    margin-bottom: 10px;
+.skill-bar .progress-line.css span {
+    width: 85%;
 }
 
-.footer-icons a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 10px;
-    transition: color 0.3s;
+.skill-bar .progress-line.javascript span {
+    width: 80%;
 }
 
-.footer-icons a:hover {
-    color: #1db954;
+.skill-bar .progress-line.documentation span {
+    width: 97%;
 }
 
-@media screen and (min-width: 768px) {
-    .container {
-        flex-direction: row;
+.skill-bar .progress-line.diagrams span {
+    width: 95%;
+}
+
+@keyframes animateBar {
+    0% {
+        transform: scaleX(0);
+    }
+    100% {
+        transform: scaleX(1);
     }
 }
 
-@media screen and (max-width: 767px) {
+@keyframes animateProgress {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: inherit;
+    }
+}
+
+/* Estilos Responsive */
+@media (max-width: 768px) {
     header nav ul {
         flex-direction: column;
-        align-items: flex-end;
+        align-items: center;
     }
 
-    .cover-text {
-        font-size: 2em;
+    header nav ul li {
+        margin-bottom: 10px;
+    }
+
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .container .text {
+        margin-bottom: 20px;
+        width: 100%;
     }
 
     .skill-bars {
-        flex-direction: column;
+        width: 100%;
+    }
+
+    .skill-bar {
+        width: 100%;
+        margin-bottom: 15px;
     }
 }

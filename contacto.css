@@ -159,17 +159,23 @@ footer ul li {
     margin: 0 0 5px;
 }
 
+/* Estilos Responsive */
 @media (max-width: 768px) {
     header nav ul {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
     }
 
-    .cover-text {
-        font-size: 2.5em;
+    header nav ul li {
+        margin-bottom: 10px;
     }
 
-    .content-section {
-        padding: 20px 10px;
+    .contact-form {
+        padding: 10px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
     }
 }

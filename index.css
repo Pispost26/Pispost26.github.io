@@ -194,7 +194,9 @@ footer {
     }
 
     .background-overlay img {
-        object-fit: contain;
+        object-fit: cover; /* Asegura que la imagen se ajuste al contenedor */
+        max-width: 100%;   /* Limita la imagen al ancho de la pantalla */
+        height: auto;      /* Mantiene la proporción de la imagen */
     }
 
     .cover-text-container {
