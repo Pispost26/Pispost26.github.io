@@ -185,6 +185,10 @@ footer {
         margin-bottom: 10px;
     }
 
+    header {
+        padding: 10px 0;
+    }
+
     .cover-text {
         font-size: 2em;
     }
@@ -194,9 +198,9 @@ footer {
     }
 
     .background-overlay img {
-        object-fit: cover; /* Asegura que la imagen se ajuste al contenedor */
-        max-width: 100%;   /* Limita la imagen al ancho de la pantalla */
-        height: auto;      /* Mantiene la proporción de la imagen */
+        object-fit: cover;
+        max-width: 100%;
+        height: auto;
     }
 
     .cover-text-container {
