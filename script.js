@@ -72,3 +72,11 @@ function openModal(img) {
     }
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+    const skillBars = document.querySelectorAll(".skill-bar .progress-bar");
+
+    skillBars.forEach((bar) => {
+        const width = bar.style.getPropertyValue("--progress-width");
+        bar.style.width = width;
+    });
+});
