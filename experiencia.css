@@ -107,96 +107,64 @@ header nav ul li a:hover {
 .image img {
     max-width: 100%;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .skill-bars {
     margin-top: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
 }
 
 .skill-bar {
-    flex: 1 1 45%;
-    background: #333;
-    padding: 15px;
-    border-radius: 10px;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.3s;
-}
-
-.skill-bar:hover {
-    transform: scale(1.05);
+    margin-bottom: 20px;
 }
 
 .skill-bar p {
-    margin: 0 0 10px;
-    font-size: 1.1em;
-    font-weight: 400;
+    margin: 0;
 }
 
 .progress {
-    background: #444;
-    border-radius: 10px;
-    overflow: hidden;
+    background: #555;
+    border-radius: 5px;
     height: 20px;
-    position: relative;
+    overflow: hidden;
 }
 
 .progress-bar {
-    background: #03a9f4;
+    background: #00bcd4;
     height: 100%;
     width: var(--progress-width);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    font-size: 0.9em;
-    transition: width 1s ease-in-out;
 }
 
 footer {
-    background: rgba(0, 0, 0, 0.8);
-    color: #fff;
     text-align: center;
     padding: 20px;
+    background-color: #1f1f1f;
     margin-top: auto;
 }
 
-footer .footer-icons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+.footer-icons {
     margin-bottom: 10px;
 }
 
-footer .footer-icons a {
+.footer-icons a {
     color: #fff;
-    font-size: 1.5em;
-    transition: color 0.3s, transform 0.3s;
+    margin: 0 10px;
+    text-decoration: none;
 }
 
-footer .footer-icons a:hover {
-    color: #03a9f4;
-    transform: scale(1.2);
-}
-
-footer p {
-    margin: 0;
-    font-size: 0.9em;
+.footer-icons a:hover {
+    color: #00bcd4;
 }
 
 /* Media Queries para dispositivos móviles */
 @media (max-width: 768px) {
     header nav ul {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row; /* Cambiado a fila para que estén uno al lado del otro */
+        flex-wrap: wrap; /* Permitir que se envuelvan si es necesario */
+        justify-content: center; /* Centrar los enlaces */
     }
 
     header nav ul li {
-        margin-bottom: 10px;
+        margin: 0 5px; /* Espaciado horizontal entre enlaces */
     }
 
     .container {
@@ -205,27 +173,5 @@ footer p {
 
     .skill-bar {
         flex: 1 1 100%;
-    }
-}
-
-@media (max-width: 480px) {
-    .cover-text {
-        font-size: 2em;
-    }
-
-    .content-section {
-        padding: 20px 10px;
-    }
-
-    .progress-bar {
-        font-size: 0.8em;
-    }
-
-    footer .footer-icons a {
-        font-size: 1.2em;
-    }
-
-    footer p {
-        font-size: 0.8em;
     }
 }
