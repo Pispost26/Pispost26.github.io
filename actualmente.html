@@ -4,87 +4,101 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Actualmente</title>
+
     <link rel="stylesheet" href="actualmente.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-    <!-- Código de Google Ads -->
+    <!-- Google Ads -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6757012375854972"
         crossorigin="anonymous"></script>
-
 </head>
+
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="experiencia.html">Experiencia</a></li>
-                <li><a href="proyectos.html">T.I</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="actualmente.html" class="active">Actualmente</a></li>
-                <li><a href="certificados.html" class="nav-link">certificados</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <div id="cover-actualmente">
-        <div class="cover-text-container">
-            <div class="cover-text animated-text">Actualmente</div>
-            <div class="cover-text animated-text">______________________</div>
-            <div class="content-section">
-                <div class="container">
-                    <div class="text">
-                        <h2>Estudiante Ingeniería de Sistemas y Desarrollo de Software</h2>
-                        <p>Actualmente curso en la etapa final de mi carrera en Ingeniería en Desarrollo de Software, en camino hacia mi graduación. Mi pasión por la innovación y el aprendizaje tecnológico me impulsa a explorar y contribuir al futuro del desarrollo de software, buscando crear soluciones que transformen el mundo digital.</p>
-                    </div>
-                    <div class="images">
-                        <img src="img/6.jpg" alt="Imagen 6" class="animated-image">
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="text">
-                        <h2>PENSUM</h2>
-                        <p>A continuación, se muestra el pensum del estudiante y del graduado, destacando las materias cursadas y las que aún faltan por cursar:</p>
-                    </div>
-                    <div class="images">
-                        <img src="img/PEMSUM.jpg" alt="Pensum de materias" class="animated-image" id="pensum-img" onclick="openModal(this)">
-                    </div>
-                </div>
-            </div>
-        </div>
+<header>
+    <nav class="nav-container">
+        <ul class="nav-menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="experiencia.html">Experiencia</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="actualmente.html" class="active">Actualmente</a></li>
+            <li><a href="certificados.html">Certificados</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- COVER -->
+<section id="cover-actualmente">
+    <div class="overlay"></div>
+    <div class="cover-text-container">
+        <h1 class="cover-text">ACTUALMENTE</h1>
+        <span class="line"></span>
     </div>
+</section>
 
-    <!-- Modal -->
-    <div id="myModal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="img01">
-        <div id="caption"></div>
-    </div>
+<!-- CONTENT -->
+<main class="content-section">
 
-    <footer>
-        <div class="footer-icons">
-            <a href="https://www.linkedin.com/in/andres-felipe-meneses-bustamante-9892591a8/" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/Pispost26" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://www.instagram.com/un.perfil_mas/" target="_blank"><i class="fab fa-instagram"></i></a>
+    <section class="info-block">
+        <div class="text">
+            <h2>Estudiante de Ingeniería de Sistemas y Desarrollo de Software</h2>
+            <p>
+                Actualmente curso la etapa final de mi carrera en Ingeniería de Sistemas y Desarrollo de Software,
+                en camino hacia mi graduación. Mi enfoque está orientado al aprendizaje continuo, la innovación
+                tecnológica y la creación de soluciones que aporten valor al entorno digital.
+            </p>
         </div>
-        <p>&copy; 2023 Andres Felipe Meneses. Todos los derechos reservados.</p>
-    </footer>
+        <div class="image">
+            <img src="img/6.jpg" alt="Estudiante de Ingeniería">
+        </div>
+    </section>
 
-    <script>
-        // Modal Image Gallery
-        var modal = document.getElementById("myModal");
-        var modalImg = document.getElementById("img01");
-        var captionText = document.getElementById("caption");
+    <section class="info-block">
+        <div class="text">
+            <h2>Pensum Académico</h2>
+            <p>
+                A continuación se presenta el pensum académico, donde se evidencian las materias cursadas
+                y las que se encuentran pendientes para culminar el proceso formativo.
+            </p>
+        </div>
+        <div class="image">
+            <img src="img/pemsun.png" alt="Pensum académico" onclick="openModal(this)">
+        </div>
+    </section>
 
-        function openModal(element) {
-            modal.style.display = "block";
-            modalImg.src = element.src;
-            captionText.innerHTML = element.alt;
-        }
+</main>
 
-        var span = document.getElementsByClassName("close")[0];
-        span.onclick = function() { 
-            modal.style.display = "none";
-        }
-    </script>
+<!-- MODAL -->
+<div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+</div>
+
+<footer>
+    <div class="footer-icons">
+        <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/Pispost26" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.instagram.com/un.perfil_mas/" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+    <p>&copy; 2024 Andres Felipe Meneses</p>
+</footer>
+
+<script>
+    const modal = document.getElementById("myModal");
+    const modalImg = document.getElementById("img01");
+    const captionText = document.getElementById("caption");
+
+    function openModal(img) {
+        modal.style.display = "block";
+        modalImg.src = img.src;
+        captionText.innerHTML = img.alt;
+    }
+
+    document.querySelector(".close").onclick = () => {
+        modal.style.display = "none";
+    };
+</script>
+
 </body>
 </html>
